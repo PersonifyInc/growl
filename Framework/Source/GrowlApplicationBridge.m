@@ -500,7 +500,7 @@ static struct {
 + (void) notifyWithDictionary:(NSDictionary *)userInfo
 {
    // Are we on Mountain Lion?
-   BOOL useNotificationCenter = (NSClassFromString(@"NSUserNotificationCenter") != nil);
+    BOOL useNotificationCenter = NO;//(NSClassFromString(@"NSUserNotificationCenter") != nil);
    BOOL alwaysCopyNC = NO;
    
    // Do we have notification center disabled?  (Only valid if it hasn't been turned on directly in Growl.)
@@ -632,9 +632,9 @@ static struct {
     if([self _growlIsReachableUpdateCache:NO])
        result = NO;
     
-    //If on Mountain Lion, Mist won't be used.
-    if (NSClassFromString(@"NSUserNotificationCenter"))
-       result = NO;
+//    //If on Mountain Lion, Mist won't be used.
+//    if (NSClassFromString(@"NSUserNotificationCenter"))
+//       result = NO;
 
     return result;
 }
