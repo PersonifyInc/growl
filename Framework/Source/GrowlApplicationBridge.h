@@ -551,6 +551,7 @@
  */
 - (void) growlNotificationTimedOut:(id)clickContext;
 
+- (void) growlNotificationDisplayed:(id)clickContext atWindow:(id)window;
 
 /*!
  * @method hasNetworkClientEntitlement

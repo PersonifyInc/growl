@@ -1003,6 +1003,12 @@ static struct {
          [[notification userInfo] objectForKey:GROWL_KEY_CLICKED_CONTEXT]];
     AUTORELEASEPOOL_END
 }
++ (void) growlNotificationDisplayed:(NSNotification *)notification atWindow:(id)window {
+	AUTORELEASEPOOL_START
+    [delegate growlNotificationDisplayed:
+     [[notification userInfo] objectForKey:GROWL_KEY_CLICKED_CONTEXT] atWindow:window];
+    AUTORELEASEPOOL_END
+}
 
 #pragma mark -
 

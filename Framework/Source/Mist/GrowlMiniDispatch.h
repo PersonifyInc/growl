@@ -11,6 +11,7 @@
 @optional
 - (void)growlNotificationWasClicked:(id)context;
 - (void)growlNotificationTimedOut:(id)context;
+- (void)growlNotificationDisplayed:(id)context atWindow:(id)window;
 @end
 
 @class GrowlPositionController;

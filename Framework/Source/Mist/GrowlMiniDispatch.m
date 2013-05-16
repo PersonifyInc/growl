@@ -71,6 +71,9 @@
 		[[newWindow window] setFrameOrigin:found.origin];
 		[windows addObject:newWindow];
 		[newWindow fadeIn];
+        id info = newWindow.userInfo;
+        if ([[self delegate] respondsToSelector:@selector(growlNotificationDisplayed:atWindow:)])
+            [[self delegate] growlNotificationDisplayed:info atWindow:newWindow];
 		return YES;
 	}else{
 		return NO;
