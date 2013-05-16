@@ -574,6 +574,13 @@ static struct {
    }
 }
 
++ (void)dismissNotification:(id)window
+{
+    dispatch_async(dispatch_get_main_queue(), ^(void) {
+        [GrowlApplicationBridge _dismissMiniDispatch:window];
+    });
+}
+
 + (BOOL)isNotificationDefaultEnabled:(NSDictionary*)growlDict
 {
    NSDictionary *regDict = [self bestRegistrationDictionary];
@@ -640,6 +647,11 @@ static struct {
 + (BOOL)shouldUseBuiltInNotifications
 {
     return shouldUseBuiltInNotifications;
+}
+
++ (void) _dismissMiniDispatch:(id)window
+{
+    [miniDispatch dismissNotification:window];
 }
 
 + (void) _fireMiniDispatch:(NSDictionary*)growlDict

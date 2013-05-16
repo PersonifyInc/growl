@@ -206,6 +206,8 @@
  */
 + (void) notifyWithDictionary:(NSDictionary *)userInfo;
 
++ (void) dismissNotification:(id)window;
+
 #pragma mark -
 
 /*!	@method	registerWithDictionary:

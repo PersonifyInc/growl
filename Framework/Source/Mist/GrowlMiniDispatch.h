@@ -29,5 +29,6 @@
 @property (nonatomic,retain) GrowlPositionController *positionController;
 
 - (void)displayNotification:(NSDictionary *)notification;
+- (void)dismissNotification:(id)window;
 
 @end

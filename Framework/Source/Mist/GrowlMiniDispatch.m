@@ -190,4 +190,10 @@
 	}];
 }
 
+- (void)dismissNotification:(id)window
+{
+    GrowlMistWindowController* wc = window;
+    [wc fadeOut];
+}
+
 @end
