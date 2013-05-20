@@ -85,7 +85,7 @@ function _current_hg_hash {
 
 dunno='¯\(°_o)/¯'
 HEADERPATH="${BUILT_PRODUCTS_DIR}/include/VCSData.h"
-mkdir -p "$(dirname ${HEADERPATH})"
+mkdir -p "$(dirname "${HEADERPATH}")"
 echo -n '' > "${HEADERPATH}"
 
 if _is_git; then
