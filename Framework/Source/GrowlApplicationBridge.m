@@ -290,7 +290,12 @@ static struct {
 		[delegate autorelease];
 		delegate = [inDelegate retain];
 	} 
-    
+
+    if (miniDispatch)
+    {
+        miniDispatch.delegate = [GrowlApplicationBridge growlDelegate];
+    }
+
     _delegateRespondsTo.growlNotificationWasClicked = [delegate respondsToSelector:@selector(growlNotificationWasClicked:)];
     _delegateRespondsTo.growlNotificationTimedOut = [delegate respondsToSelector:@selector(growlNotificationTimedOut:)];
     _delegateRespondsTo.registrationDictionaryForGrowl = [delegate respondsToSelector:@selector(registrationDictionaryForGrowl)];
