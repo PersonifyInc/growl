@@ -5449,7 +5449,7 @@
 				GCC_PREFIX_HEADER = Framework/Source/GrowlFramework_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Framework/Resources/Growl.framework-Info.plist";
-				INFOPLIST_PREPROCESS = YES;
+				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -5462,6 +5462,7 @@
 				);
 				PRODUCT_NAME = Growl;
 				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
 				WARNING_LDFLAGS = "-Wassign-intercept";
 			};
 			name = Localization;
@@ -5801,8 +5802,10 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 93EA7FFE136908B100AB89AE /* Release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				PRODUCT_NAME = Revision;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -6167,7 +6170,7 @@
 				GCC_PREFIX_HEADER = Framework/Source/GrowlFramework_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Framework/Resources/Growl.framework-Info.plist";
-				INFOPLIST_PREPROCESS = YES;
+				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -6180,6 +6183,7 @@
 				);
 				PRODUCT_NAME = Growl;
 				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
 				WARNING_LDFLAGS = "-Wassign-intercept";
 			};
 			name = Debug;
@@ -6189,6 +6193,7 @@
 			baseConfigurationReference = 93217439163A476900D5790F /* Release-Framework.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -6196,7 +6201,7 @@
 				GCC_PREFIX_HEADER = Framework/Source/GrowlFramework_Prefix.pch;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				INFOPLIST_FILE = "Framework/Resources/Growl.framework-Info.plist";
-				INFOPLIST_PREPROCESS = YES;
+				INFOPLIST_PREPROCESS = NO;
 				INSTALL_PATH = "@executable_path/../Frameworks";
 				MACH_O_TYPE = mh_dylib;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
@@ -6208,7 +6213,9 @@
 					0xC0000000,
 				);
 				PRODUCT_NAME = Growl;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
+				SKIP_INSTALL = NO;
 				WARNING_LDFLAGS = "-Wassign-intercept";
 			};
 			name = Release;
