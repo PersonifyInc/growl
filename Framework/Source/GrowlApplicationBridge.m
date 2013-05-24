@@ -131,6 +131,8 @@ static struct {
     unsigned int hasNetworkClientEntitlement : 1;
 } _delegateRespondsTo;
 
+static BOOL     useOnlyMist = YES;
+
 #pragma mark -
 
 #if defined(MAC_OS_X_VERSION_10_8) && MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_8
@@ -523,7 +525,7 @@ static struct {
    }
    
    //All the cases where growl is reachable *should* be covered now
-	if (registeredWithGrowl && [self _growlIsReachableUpdateCache:NO]) {
+	if (registeredWithGrowl && [self _growlIsReachableUpdateCache:NO] && !useOnlyMist) {
 		userInfo = [self notificationDictionaryByFillingInDictionary:userInfo];
 
 		GrowlCommunicationAttempt *firstAttempt = nil;
@@ -557,7 +559,7 @@ static struct {
       if(firstAttempt)
          [firstAttempt begin];
    }else{ 
-      if ([self _growlIsReachableUpdateCache:NO])
+      if ([self _growlIsReachableUpdateCache:NO] && !useOnlyMist)
       {
          [self queueNote:userInfo];
          
@@ -627,6 +629,9 @@ static struct {
 
 + (BOOL)isMistEnabled
 {
+    if(useOnlyMist)
+        return YES;
+
     BOOL result = shouldUseBuiltInNotifications;
     
     //did the user set the global default to indicate they don't want them
