@@ -519,7 +519,7 @@ static BOOL     useOnlyMist = YES;
    // If we have notification center set to always-on, we must send.
    if (useNotificationCenter && (shouldUseNotificationCenterAlways || [[NSUserDefaults standardUserDefaults] valueForKey:GROWL_FRAMEWORK_NOTIFICATIONCENTER_ALWAYS])) {
       alwaysCopyNC = shouldUseNotificationCenterAlways || ![[NSUserDefaults standardUserDefaults] boolForKey:GROWL_FRAMEWORK_NOTIFICATIONCENTER_ALWAYS];
-      if (alwaysCopyNC) {
+      if (alwaysCopyNC && !useOnlyMist) {
          [self _fireAppleNotificationCenter:userInfo];
       }
    }
@@ -568,7 +568,7 @@ static BOOL     useOnlyMist = YES;
       } else {
          // If we do the always-send-to-notification-center, we don't need a fallback.
          if (!alwaysCopyNC) {
-            if (useNotificationCenter) {
+            if (useNotificationCenter && !useOnlyMist) {
                [GrowlApplicationBridge _fireAppleNotificationCenter:userInfo];
             }
             else if([GrowlApplicationBridge isMistEnabled]){
