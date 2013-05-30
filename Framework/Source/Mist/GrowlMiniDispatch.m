@@ -193,7 +193,7 @@
 - (void)dismissNotification:(id)window
 {
     GrowlMistWindowController* wc = window;
-    [wc fadeOut];
+    [self closeAllNotifications:wc];
 }
 
 @end
