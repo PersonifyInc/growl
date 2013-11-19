@@ -3756,6 +3756,11 @@
 			attributes = {
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = "The Growl Project";
+				TargetAttributes = {
+					34F60EAA078E1CD500CECA86 = {
+						DevelopmentTeam = NJD4GXSB52;
+					};
+				};
 			};
 			buildConfigurationList = 95EE27910855AA6C0045DB39 /* Build configuration list for PBXProject "Growl" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -5442,6 +5447,8 @@
 			baseConfigurationReference = 93217438163A476900D5790F /* Localization-Framework.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -5461,6 +5468,7 @@
 					0xC0000000,
 				);
 				PRODUCT_NAME = Growl;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WARNING_LDFLAGS = "-Wassign-intercept";
@@ -6163,7 +6171,8 @@
 			baseConfigurationReference = 93217437163A476900D5790F /* Debug-Framework.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -6183,6 +6192,7 @@
 					0xC0000000,
 				);
 				PRODUCT_NAME = Growl;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = macosx;
 				SKIP_INSTALL = NO;
 				WARNING_LDFLAGS = "-Wassign-intercept";
@@ -6194,7 +6204,8 @@
 			baseConfigurationReference = 93217439163A476900D5790F /* Release-Framework.xcconfig */;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
-				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
