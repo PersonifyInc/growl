@@ -129,7 +129,10 @@
 		imageRect.size = [notificationImage size];
 		imageRect.origin.x = self.bounds.origin.x + MIST_PADDING;
 		imageRect.origin.y = self.bounds.origin.y + MIST_PADDING;
-		[notificationImage drawInRect:imageRect];
+        if([notificationImage respondsToSelector:@selector(drawInRect:)])
+            [notificationImage drawInRect:imageRect];
+        else
+            [notificationImage oldDrawInRect:imageRect];
 	}
 	
 	// Draw title.

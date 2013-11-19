@@ -5,6 +5,7 @@
 //
 
 #import "NSImageAdditions.h"
+#include <Availability.h>
 
 
 @implementation NSImage (GrowlAdditions)
@@ -109,7 +110,7 @@
 	return result;
 }
 
-- (void) drawInRect:(NSRect)rect
+- (void) oldDrawInRect:(NSRect)rect
 {
 	NSRect sourceRect = NSZeroRect;
 	sourceRect.size = [self size];
